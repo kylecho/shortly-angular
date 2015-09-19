@@ -116,6 +116,7 @@ input[type=url]:focus {
 
 .error {
   /*border: red solid 4px;*/
+  color: red;
   padding: 10px;
   margin: 0 10px;
 }

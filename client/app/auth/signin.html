@@ -1,9 +1,18 @@
 <div id='signin'>
   <h1>signin</h1>
   <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
+    <input name="username" type='text'ng-model='user.username' ng-pattern="validUser.word" ng-minlength="3" ng-maxlength="15" required>
     <input type="password" ng-model='user.password'>
     <button>signin</button>
+    <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+    <div role="alert">
+      <ul>
+        <li class="error" ng-show="signinForm.username.$error.pattern">Username cannot contain any special character.</li>
+        <li class="error" ng-show="signinForm.username.$error.minlength">Username must be at least 3 characters.</li>
+        <li class="error" ng-show="signinForm.username.$error.maxlength">Username cannot be more than 15 characters.</li>
+      </ul>
+    </div>
   </form>
-  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>
+
+<!-- ng-minlength="3" ng-maxlength="15" -->

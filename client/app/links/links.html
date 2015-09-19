@@ -9,10 +9,11 @@
 </div>
 
 <div id='container'>
+  <input ng-model="searchText">
   <!-- Your html here -->
   <!-- <li ng-repeat="link in data">{{ link }}</li>
   <a href="#/shorten"><strong>Shorten</strong> ...</a> -->
-  <div class='link' ng-repeat="link in data.links">
+  <div class='link' ng-repeat="link in data.links | orderBy: '-visits' | filter:searchText">
     <img src='assets/redirect_icon.png'/>
     <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
     <div class='title'>{{link.title}}</div>

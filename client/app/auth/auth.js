@@ -27,4 +27,10 @@ angular.module('shortly.auth', [])
         console.error(error);
       });
   };
+
+  $scope.validUser = {
+    text: 'username',
+    word: /^[a-zA-Z0-9]*$/,
+  };
+
 });
