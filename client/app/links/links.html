@@ -1,7 +1,26 @@
+<div class='navigation'>
+  <ul>
+    <li><a href='#/links' class='index'>All Links</a></li>
+    <li><a href='#/shorten' class='create'>Shorten</a></li>
+  </ul>
+  <ul>
+    <li><a href='/logout' class='navigation'>Logout</a></li>
+  </ul>
+</div>
+
 <div id='container'>
   <!-- Your html here -->
-  <li ng-repeat="link in data">{{ link }}</li>
-  <li>{{ data }}</li>
-  <a href="/shorten"><strong>Shorten</strong> ...</a>
+  <!-- <li ng-repeat="link in data">{{ link }}</li>
+  <a href="#/shorten"><strong>Shorten</strong> ...</a> -->
+  <div class='link' ng-repeat="link in data.links">
+    <img src='assets/redirect_icon.png'/>
+    <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+    <div class='title'>{{link.title}}</div>
+    <div class='original'>{{link.url}}</div>
+    <a href='{{link.base_url}}/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
+  </div>
+
 
 </div>
+
+
