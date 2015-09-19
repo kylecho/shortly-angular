@@ -30,7 +30,7 @@ angular.module('shortly.auth', [])
 
   $scope.validUser = {
     text: 'username',
-    word: /^[a-zA-Z0-9]*$/,
+    word: /^[a-zA-Z0-9]*$/
   };
 
 });

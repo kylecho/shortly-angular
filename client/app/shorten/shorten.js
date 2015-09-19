@@ -6,7 +6,7 @@ angular.module('shortly.shorten', [])
     Links.shorten($scope.link)
     .then(function () {
       $scope.link.url = "";
-      $location.url('/links'); 
+      $location.url('/links');
     });
   };
 });
