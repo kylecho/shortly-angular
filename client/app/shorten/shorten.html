@@ -4,19 +4,27 @@
     <li><a href='#/shorten' class='create'>Shorten</a></li>
   </ul>
   <ul>
-    <li><a href='/logout' class='navigation'>Logout</a></li>
+    <li><a href='#/logout' class='navigation'>Logout</a></li>
   </ul>
   </div>
 <div id='container'></div>
 
 
 <div id='container'>
-    <form name="shortenUrl" ng-submit='addLink(link)'>
-      <input type='text' class='text' ng-model='link.url'>
+    <form name="shortenUrl" ng-submit='addLink()'>
+      <input type='url' name="input" class='text' ng-model='link.url'>
       <input type='submit' value='Shorten'>
     </form>
     <!-- <img class='spinner' src='/spiffygif_46x46.gif'> -->
-    <div class='message'></div>
+    <div class='message'>
+      <div role="alert">
+      <span class="error" ng-show="shortenUrl.input.$error.required">
+      Required!</span>
+      <span class="error" ng-show="shortenUrl.input.$error.url">
+      Not valid url!</span>
+      </div>
+      
+    </div>
 </div>
 
 

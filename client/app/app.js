@@ -7,6 +7,9 @@ angular.module('shortly', [
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
+    .when('/', {
+      redirectTo: '/signin'
+    })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
@@ -16,6 +19,10 @@ angular.module('shortly', [
       controller: 'AuthController'
     })
     // Your code here
+    .when('/logout', {
+      //remove token
+      redirectTo: '/signin'
+    })
     .when('/links', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
